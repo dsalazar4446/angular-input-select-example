@@ -1,0 +1,31 @@
+<div *ngFor="let question of questions; let i = index">
+  <form [ngSwitch]="question.id">
+    <label for="selected">{{question.question}}</label><br/>
+
+      <ng-container *ngSwitchCase="1">
+        <select name="selected" [(ngModel)]="answer.question1" required>
+          <option *ngFor="let answer of question.answers;" value="{{answer.id}}">{{answer.answer}}</option>
+        </select>
+      </ng-container>
+      <ng-container *ngSwitchCase="2">
+        <select name="selected" [(ngModel)]="answer.question2" required>
+          <option *ngFor="let answer of question.answers;" value="{{answer.id}}">{{answer.answer}}</option>
+        </select>
+      </ng-container>
+      <ng-container *ngSwitchCase="3">
+        <select name="selected" [(ngModel)]="answer.question3" required>
+          <option *ngFor="let answer of question.answers;" value="{{answer.id}}">{{answer.answer}}</option>
+        </select>
+      </ng-container>
+      <ng-container *ngSwitchCase="4">
+        <select name="selected" [(ngModel)]="answer.question4" required>
+          <option *ngFor="let answer of question.answers;" value="{{answer.id}}">{{answer.answer}}</option>
+        </select>
+      </ng-container>
+      <ng-container *ngSwitchCase="5">
+        <select name="selected" [(ngModel)]="answer.question5" required>
+          <option *ngFor="let answer of question.answers;" value="{{answer.id}}">{{answer.answer}}</option>
+        </select>
+      </ng-container>
+  </form>
+</div>
